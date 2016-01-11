@@ -11,6 +11,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialDesignColors.Wpf", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialDesignThemes.Wpf", "MaterialDesignThemes.Wpf\MaterialDesignThemes.Wpf.csproj", "{F079FB0A-A8ED-4216-B6A5-345756751A04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moody.DAL", "Moody.DAL\Moody.DAL.csproj", "{D34DD514-4AF3-4F60-9E5C-8E81CE029F03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moody.DAL.Contract", "Moody.DAL.Contract\Moody.DAL.Contract.csproj", "{6DA868DB-2213-4F37-8B9E-850619698BAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moody.DAL.Utility", "Moody.DAL.Utility\Moody.DAL.Utility.csproj", "{B1201C80-8D00-4CF2-BC14-E3881952D3FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moody.DAL.Test", "Moody.DAL.Test\Moody.DAL.Test.csproj", "{B4D42D5A-61DA-4D02-840A-CE8DBCE64EBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moody.UI", "Moody.UI\Moody.UI.csproj", "{BFA08B16-15CE-4734-A9B8-A512032F3C75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moody.UI.Context", "Moody.UI.Context\Moody.UI.Context.csproj", "{D263D8FE-2B75-43F2-A2AB-FA6F3E02E0E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		AppVeyor|Any CPU = AppVeyor|Any CPU
@@ -36,6 +48,42 @@ Global
 		{F079FB0A-A8ED-4216-B6A5-345756751A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F079FB0A-A8ED-4216-B6A5-345756751A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F079FB0A-A8ED-4216-B6A5-345756751A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D34DD514-4AF3-4F60-9E5C-8E81CE029F03}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{D34DD514-4AF3-4F60-9E5C-8E81CE029F03}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{D34DD514-4AF3-4F60-9E5C-8E81CE029F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D34DD514-4AF3-4F60-9E5C-8E81CE029F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D34DD514-4AF3-4F60-9E5C-8E81CE029F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D34DD514-4AF3-4F60-9E5C-8E81CE029F03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DA868DB-2213-4F37-8B9E-850619698BAE}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA868DB-2213-4F37-8B9E-850619698BAE}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{6DA868DB-2213-4F37-8B9E-850619698BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA868DB-2213-4F37-8B9E-850619698BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA868DB-2213-4F37-8B9E-850619698BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA868DB-2213-4F37-8B9E-850619698BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1201C80-8D00-4CF2-BC14-E3881952D3FF}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{B1201C80-8D00-4CF2-BC14-E3881952D3FF}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{B1201C80-8D00-4CF2-BC14-E3881952D3FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1201C80-8D00-4CF2-BC14-E3881952D3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1201C80-8D00-4CF2-BC14-E3881952D3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1201C80-8D00-4CF2-BC14-E3881952D3FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4D42D5A-61DA-4D02-840A-CE8DBCE64EBF}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D42D5A-61DA-4D02-840A-CE8DBCE64EBF}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{B4D42D5A-61DA-4D02-840A-CE8DBCE64EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D42D5A-61DA-4D02-840A-CE8DBCE64EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4D42D5A-61DA-4D02-840A-CE8DBCE64EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D42D5A-61DA-4D02-840A-CE8DBCE64EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFA08B16-15CE-4734-A9B8-A512032F3C75}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA08B16-15CE-4734-A9B8-A512032F3C75}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{BFA08B16-15CE-4734-A9B8-A512032F3C75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA08B16-15CE-4734-A9B8-A512032F3C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA08B16-15CE-4734-A9B8-A512032F3C75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA08B16-15CE-4734-A9B8-A512032F3C75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D263D8FE-2B75-43F2-A2AB-FA6F3E02E0E8}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{D263D8FE-2B75-43F2-A2AB-FA6F3E02E0E8}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{D263D8FE-2B75-43F2-A2AB-FA6F3E02E0E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D263D8FE-2B75-43F2-A2AB-FA6F3E02E0E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D263D8FE-2B75-43F2-A2AB-FA6F3E02E0E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D263D8FE-2B75-43F2-A2AB-FA6F3E02E0E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
