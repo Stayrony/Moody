@@ -40,12 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Error.Designer.cs" />
     <Compile Include="ExceptionBase.cs" />
     <Compile Include="IncorrectPasswordException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UndefinedUserException.cs" />
     <Compile Include="UserAlreadyExists.cs" />
     <Compile Include="UserNotExists.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Error.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
