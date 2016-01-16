@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{338BF82C-7D42-46EE-8B6A-CB75FC223070}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moody.UI.ViewModel</RootNamespace>
+    <AssemblyName>Moody.UI.ViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HeaderViewModel.cs" />
+    <Compile Include="LoginViewModel.cs" />
+    <Compile Include="MainMenuViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterViewModel.cs" />
+    <Compile Include="ViewModelBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Moody.Exception\Moody.Exception.csproj">
+      <Project>{847fd136-3008-4137-a3c1-386f86f1bee7}</Project>
+      <Name>Moody.Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moody.Service.BLL\Moody.Service.BLL.csproj">
+      <Project>{f137e157-b8c8-433f-90c0-dfd45f6f202e}</Project>
+      <Name>Moody.Service.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moody.Service.Contract\Moody.Service.Contract.csproj">
+      <Project>{8B5C50FF-3E46-427B-927A-F69495CE5406}</Project>
+      <Name>Moody.Service.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moody.Service.Domain\Moody.Service.Domain.csproj">
+      <Project>{c25a9156-1555-4b40-b4ec-7f09088d3423}</Project>
+      <Name>Moody.Service.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moody.UI.Context\Moody.UI.Context.csproj">
+      <Project>{d263d8fe-2b75-43f2-a2ab-fa6f3e02e0e8}</Project>
+      <Name>Moody.UI.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moody.UI.Contract\Moody.UI.Contract.csproj">
+      <Project>{f7c7695c-cd15-4a64-86c6-171155895632}</Project>
+      <Name>Moody.UI.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moody.UI.Utility\Moody.UI.Utility.csproj">
+      <Project>{cdb4bfe2-d52f-4774-a0ed-c7639b7a7dab}</Project>
+      <Name>Moody.UI.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
