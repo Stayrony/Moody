@@ -41,10 +41,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\paket-files\ControlzEx\ControlzEx\src\ControlzEx\PopupEx.cs">
-      <Paket>True</Paket>
-      <Link>ControlzEx/PopupEx.cs</Link>
-    </Compile>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -216,6 +212,7 @@
     <Compile Include="ClockItemButton.cs" />
     <Compile Include="ColorZone.cs" />
     <Compile Include="ComboBoxPopup.cs" />
+    <Compile Include="ControlzEx\PopupEx.cs" />
     <Compile Include="Converters\BrushRoundConverter.cs" />
     <Compile Include="Converters\BrushToRadialGradientBrushConverter.cs" />
     <Compile Include="Converters\CalendarDateCoalesceConverter.cs" />
