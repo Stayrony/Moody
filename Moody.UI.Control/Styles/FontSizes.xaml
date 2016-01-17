@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Moody.UI.Styles"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--Details-->
+
+    <system:Double x:Key="MainMenuTextSize">16.0</system:Double>
+
+    <system:Double x:Key="DescriptionTextSizeLarge">24.0</system:Double>
+    <system:Double x:Key="DescriptionTextSizeNormal">20.0</system:Double>
+    <system:Double x:Key="DescriptionTextSizeSmall">16.0</system:Double>
+
+    <system:Double x:Key="TitleTextSizeDefault">24.0</system:Double>
+
+
+    <!--Home-->
+    <system:Double x:Key="SectionTitleVeryHighResolutions">30</system:Double>
+    <system:Double x:Key="SectionTitleHighResolutions">26</system:Double>
+    <system:Double x:Key="SectionHeaderMediumResolutions">20</system:Double>
+    <system:Double x:Key="SectionHeaderLowResolutions">16</system:Double>
+    <system:Double x:Key="SectionHeaderVeryLowResolutions">14</system:Double>
+
+    <!--List-->
+    <system:Double x:Key="ListTitleTextHighResolutions">21</system:Double>
+    <system:Double x:Key="ListTitleTextMediumResolutions">19</system:Double>
+    <system:Double x:Key="ListTitleTextLowResolutions">17</system:Double>
+    <system:Double x:Key="ListTitleTextVeryLowResolutions">15</system:Double>
+    <system:Double x:Key="ListSubTitleTextHighResolutions">19</system:Double>
+    <system:Double x:Key="ListSubTitleTextMediumResolutions">17</system:Double>
+    <system:Double x:Key="ListSubTitleTextLowResolutions">15</system:Double>
+    <system:Double x:Key="ListSubTitleTextVeryLowResolutions">13</system:Double>
+
+</ResourceDictionary>

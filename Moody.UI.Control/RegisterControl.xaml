@@ -1,0 +1,124 @@
+﻿<UserControl x:Class="Moody.UI.Control.RegisterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:utility="clr-namespace:Moody.UI.Utility;assembly=Moody.UI.Utility"
+             xmlns:materialDesignThemes="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="510" d:DesignWidth="320">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="Styles/LoginUserControl.xaml"/>
+    </UserControl.Resources>
+
+    <Grid Background="White"
+         HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <!--TITLE NAME-->
+            <RowDefinition Height="120"/>
+            <!--LOGIN NAME -->
+            <RowDefinition Height="50" />
+            <!--EMAIL-->
+            <RowDefinition Height="50" />
+            <!--PASSWORD-->
+            <RowDefinition Height="50" />
+            <!--CONFIRM PASSWORD-->
+            <RowDefinition Height="50" />
+            <!--EMPTY ROW-->
+            <RowDefinition Height="30" />
+            <!--SIGN UP BUTTON-->
+            <RowDefinition Height="50" />
+            <!--LOGIN LINK-->
+            <RowDefinition Height="50" />
+            <!--EMPTY ROW-->
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25" MinWidth="250"/>
+            <ColumnDefinition Width="*"  MinWidth="250"/>
+            <ColumnDefinition Width="25" MinWidth="250"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label x:Name="Title" 
+               Content="Moody" 
+               Grid.Column="1" Grid.Row="1" 
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="48" 
+               />
+
+        <!--LOGIN NAME -->
+        <TextBox x:Name="LoginNameTxt" 
+                 Grid.Column="1" Grid.Row="2" 
+                                  materialDesignThemes:TextFieldAssist.Hint ="Login Name"
+                 Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
+                 Margin="0 5 0 5"
+                 Text="{Binding Path= LoginNameReg,
+                 UpdateSourceTrigger=PropertyChanged,
+                 Mode=TwoWay}"
+                 />
+
+        <!--EMAIL-->
+        <TextBox x:Name="EmailTxt"
+                 Grid.Column="1" Grid.Row="3"
+                 Text="{Binding Path=Email,
+                 UpdateSourceTrigger=PropertyChanged,
+                 Mode=TwoWay}"
+                                 materialDesignThemes:TextFieldAssist.Hint ="Email"
+                 Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
+                Margin="0 5 0 5"/>
+
+        <!--PASSWORD-->
+        <PasswordBox utility:PasswordHelper.Attach ="True"
+                     utility:PasswordHelper.Password="{Binding Path=PasswordReg,
+                     UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     Margin="0 5 0 5"
+                     materialDesignThemes:TextFieldAssist.Hint="Password"
+                     Grid.Column="1" Grid.Row="4" 
+                     x:Name="PasswordBox" />
+
+
+        <!--CONFIRM PASSWORD-->
+        <PasswordBox utility:PasswordHelper.Attach ="True"
+                     utility:PasswordHelper.Password="{Binding Path=ConfirmPassword,
+                     UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     Margin="0 5 0 5"
+                     materialDesignThemes:TextFieldAssist.Hint="Confirm Password"
+                     Grid.Column="1" Grid.Row="5"
+                     x:Name="ConfirmPasswordBox"/>
+
+        <!--SIGNUP BUTTON-->
+        <Button x:Name="SignUpButton" 
+                Content="SIGN UP" 
+                Grid.Column="1" Grid.Row="7"
+                Command="{Binding Path=SignUpCommandReg}"
+                Margin="4 4 4 4"
+                Style="{DynamicResource MaterialDesignRaisedDarkButton}"/>
+
+        <!--LOGIN LINK-->
+        <TextBlock 
+            Grid.Column="1"
+            Grid.Row="8"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            
+            <Label 
+                   Content="Already a member?" 
+                   HorizontalContentAlignment="Center"/>
+         <Hyperlink Command="{Binding Path=LoginCommandReg}" 
+                    TextDecorations="None" 
+                    Foreground="{StaticResource BrushAccent}" BaselineAlignment="Center">
+          <TextBlock 
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center"
+              Text="Log In" Height="20"/>
+        </Hyperlink>
+            
+      </TextBlock>
+
+    </Grid>
+</UserControl>
