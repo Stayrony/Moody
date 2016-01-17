@@ -24,9 +24,6 @@
             </Style>
 
         </ResourceDictionary>
-
-
-
     </UserControl.Resources>
 
 
@@ -108,8 +105,8 @@
             UpdateSourceTrigger=PropertyChanged,
             ValidatesOnDataErrors=True,
             NotifyOnValidationError=True,
-            Mode=TwoWay}">
-            <!-- Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"-->
+            Mode=TwoWay}"
+            Style="{DynamicResource MaterialDesignFloatingHintPasswordBox}">
 
             <PasswordBox.InputBindings>
                 <KeyBinding Command="{Binding Path=LoginCommand}" Key="Enter"/>
