@@ -81,9 +81,9 @@ namespace Moody.Exception.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Blank characters are not allowed in Username..
         /// </summary>
-        public static string User_Error_Blank_Characters_In_Username {
+        public static string User_Error_Blank_Characters_In_LoginName {
             get {
-                return ResourceManager.GetString("User_Error_Blank_Characters_In_Username", resourceCulture);
+                return ResourceManager.GetString("User_Error_Blank_Characters_In_LoginName", resourceCulture);
             }
         }
 

@@ -121,11 +121,11 @@
     <value>Cannot login an invalid user.</value>
     <comment>Cannot login an invalid User.</comment>
   </data>
+  <data name="User_Error_Blank_Characters_In_LoginName" xml:space="preserve">
+    <value>Blank characters are not allowed in LoginName.</value>
+  </data>
   <data name="User_Error_Blank_Characters_In_Password" xml:space="preserve">
     <value>Blank characters are not allowed in Password.</value>
-  </data>
-  <data name="User_Error_Blank_Characters_In_Username" xml:space="preserve">
-    <value>Blank characters are not allowed in Username.</value>
   </data>
   <data name="User_Error_ConfirmPassword" xml:space="preserve">
     <value>Password does not match the confirm password.</value>
@@ -141,15 +141,12 @@
     <value>Please enter an Email.</value>
   </data>
   <data name="User_Error_Missing_LoginName" xml:space="preserve">
-    <value>Login Name is missing</value>
+    <value>Please enter a Login Name</value>
     <comment>Error message for when a User is missing a first name.</comment>
   </data>
   <data name="User_Error_Missing_Password" xml:space="preserve">
     <value>Please enter a Password.</value>
     <comment>Error mesage for when a User is missing a password.</comment>
-  </data>
-  <data name="User_Error_Missing_Username" xml:space="preserve">
-    <value>Please enter a Username.</value>
   </data>
   <data name="User_Error_Password_Policy" xml:space="preserve">
     <value>Password must contains minimum 8 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character.</value>

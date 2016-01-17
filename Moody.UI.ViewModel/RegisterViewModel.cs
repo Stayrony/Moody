@@ -6,6 +6,9 @@
 //   The register view model.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
+using System.ComponentModel;
+
 namespace Moody.UI.ViewModel
 {
     using System;
@@ -27,7 +30,7 @@ namespace Moody.UI.ViewModel
     /// <summary>
     ///     The register view model.
     /// </summary>
-    public class RegisterViewModel : ViewModelBase
+    public class RegisterViewModel : ViewModelBase, IDataErrorInfo
     {
         #region Constructor
 
@@ -369,12 +372,12 @@ namespace Moody.UI.ViewModel
             string error = null;
             if (string.IsNullOrEmpty(this.LoginNameReg))
             {
-                return Error.User_Error_Missing_Username;
+                return Error.User_Error_Missing_LoginName;
             }
 
             if (this.LoginNameReg.Contains(" "))
             {
-                return Error.User_Error_Blank_Characters_In_Username;
+                return Error.User_Error_Blank_Characters_In_LoginName;
             }
 
             return error;
@@ -456,5 +459,39 @@ namespace Moody.UI.ViewModel
         }
 
         #endregion Validation
+
+        #region IDataErrorInfo Members
+
+
+        /// <summary>
+        ///     Gets the error.
+        /// </summary>
+        string IDataErrorInfo.Error
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// The i data error info.this.
+        /// </summary>
+        /// <param name="propertyName">
+        /// The property name.
+        /// </param>
+        /// <returns>
+        /// The <see cref="string"/>.
+        /// </returns>
+        string IDataErrorInfo.this[string propertyName]
+        {
+            get
+            {
+                string error = this.GetValidationError(propertyName);
+                return error;
+            }
+        }
+
+        #endregion IDataErrorInfo Members
     }
 }

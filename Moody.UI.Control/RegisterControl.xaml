@@ -59,6 +59,8 @@
                  Margin="0 5 0 5"
                  Text="{Binding Path= LoginNameReg,
                  UpdateSourceTrigger=PropertyChanged,
+                 ValidatesOnDataErrors=True,
+                 NotifyOnValidationError=True,
                  Mode=TwoWay}"
                  />
 
@@ -67,6 +69,8 @@
                  Grid.Column="1" Grid.Row="3"
                  Text="{Binding Path=Email,
                  UpdateSourceTrigger=PropertyChanged,
+                 ValidatesOnDataErrors=True,
+                 NotifyOnValidationError=True,            
                  Mode=TwoWay}"
                  materialDesignThemes:TextFieldAssist.Hint ="Email"
                  Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
@@ -75,7 +79,10 @@
         <!--PASSWORD-->
         <PasswordBox utility:PasswordHelper.Attach ="True"
                      utility:PasswordHelper.Password="{Binding Path=PasswordReg,
-                     UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     UpdateSourceTrigger=PropertyChanged, 
+                     ValidatesOnDataErrors=True,
+                     NotifyOnValidationError=True,            
+                     Mode=TwoWay}"
                      Margin="0 5 0 5"
                      materialDesignThemes:TextFieldAssist.Hint="Password"
                      Style="{DynamicResource MaterialDesignFloatingHintPasswordBox}"
@@ -86,7 +93,10 @@
         <!--CONFIRM PASSWORD-->
         <PasswordBox utility:PasswordHelper.Attach ="True"
                      utility:PasswordHelper.Password="{Binding Path=ConfirmPassword,
-                     UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     UpdateSourceTrigger=PropertyChanged,
+                     ValidatesOnDataErrors=True,
+                     NotifyOnValidationError=True,
+                     Mode=TwoWay}"
                      Margin="0 5 0 5"
                      materialDesignThemes:TextFieldAssist.Hint="Confirm Password"
                      Style="{DynamicResource MaterialDesignFloatingHintPasswordBox}"       

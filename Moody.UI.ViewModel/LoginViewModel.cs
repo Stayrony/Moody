@@ -383,19 +383,7 @@ namespace Moody.UI.ViewModel
         {
             get
             {
-                string error = null;
-                if (propertyName == "LoginName")
-                {
-                    error = this.ValidateLoginName();
-                }
-                if (propertyName == "Password")
-                {
-                    error = this.ValidatePassword();
-                }
-                //string error = null;
-                //error = (this.loginInfoUser as IDataErrorInfo)[propertyName];
-
-                //CommandManager.InvalidateRequerySuggested();
+                string error = this.GetValidationError(propertyName);
                 return error;
             }
         }
