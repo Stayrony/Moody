@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using ControlzEx;
+using MaterialDesignThemes.Wpf.ControlzEx;
 
 namespace MaterialDesignThemes.Wpf
 {
