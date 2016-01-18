@@ -15,9 +15,9 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="{StaticResource BrushBackground}">
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
@@ -28,6 +28,7 @@
             <!-- Content Area -->
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        
         <Controls:LogoControl x:Name="logoRegion" Grid.Row="0" Grid.Column="0"/>
         <Controls:MainMenuControl x:Name="menuRegion" Grid.Row="1" Grid.Column="0"/>
         <Controls:HeaderControl x:Name="headerRegion" Grid.Row="0" Grid.Column="1"/>

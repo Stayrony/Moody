@@ -16,7 +16,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="{StaticResource BrushPrimaryDark}">
+    <Grid Background="{DynamicResource PrimaryHueDarkBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
