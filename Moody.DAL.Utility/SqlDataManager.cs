@@ -358,15 +358,50 @@ namespace Moody.DAL.Utility
             }
         }
 
+        /// <summary>
+        /// The insert procedure.
+        /// </summary>
+        /// <param name="procedureName">
+        /// The procedure name.
+        /// </param>
+        /// <param name="sqlParameters">
+        /// The sql parameters.
+        /// </param>
         public void InsertProcedure(string procedureName, SqlParameter[] sqlParameters)
         {
-            using (SqlCommand cmd = new SqlCommand(procedureName, this.conn))
+            using (var cmd = new SqlCommand(procedureName, this.conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddRange(sqlParameters);
                 cmd.Connection = this.OpenConnection();
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        /// <summary>
+        /// The insert procedure with output inserted id.
+        /// </summary>
+        /// <param name="procedureName">
+        /// The procedure name.
+        /// </param>
+        /// <param name="sqlParameters">
+        /// The sql parameters.
+        /// </param>
+        /// <returns>
+        /// The <see cref="int"/>.
+        /// </returns>
+        public int InsertProcedureWithOutputInsertedId(string procedureName, SqlParameter[] sqlParameters)
+        {
+            int id;
+            using (var cmd = new SqlCommand(procedureName, this.conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddRange(sqlParameters);
+                cmd.Connection = this.OpenConnection();
+                id = (int)cmd.ExecuteScalar();
+            }
+
+            return id;
         }
     }
 
