@@ -7,6 +7,9 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+using Moody.Service.Domain;
+
 namespace Moody.DAL.Test
 {
     using System;
@@ -71,6 +74,9 @@ namespace Moody.DAL.Test
             }
         }
 
+        /// <summary>
+        /// The get all basic test.
+        /// </summary>
         [Test]
         public void GetAllBasicTest()
         {
@@ -88,6 +94,20 @@ namespace Moody.DAL.Test
 
                 Console.WriteLine("\n");
             }
+        }
+
+        /// <summary>
+        /// The add new quote basic test.
+        /// </summary>
+        [Test]
+        public void AddNewQuoteBasicTest()
+        {
+            var newQuote = new Quote();
+            newQuote.Author = "Winston Churchill";
+            newQuote.Body = "Success is not final, failure is not fatal: it is the courage to continue that counts.";
+            newQuote.Tags = new List<string> { "Courage", "Failure", "Success" };
+            newQuote.TimeCreated = DateTime.Today;
+            this.quoteDalManager.AddNewQuote(newQuote);
         }
     }
 }

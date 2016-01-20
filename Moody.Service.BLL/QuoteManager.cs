@@ -41,12 +41,22 @@ namespace Moody.Service.BLL
         /// <summary>
         /// The create quote.
         /// </summary>
+        /// <param name="newQuote">
+        /// The new Quote.
+        /// </param>
         /// <returns>
         /// The <see cref="Quote"/>.
         /// </returns>
-        public Quote CreateQuote()
+        public Quote CreateQuote(Quote newQuote)
         {
-            var newQuote = new Quote();
+            if (string.IsNullOrEmpty(newQuote.Author))
+            {
+                newQuote.Author = "Anonymous";
+            }
+
+            newQuote.TimeCreated = DateTime.Today;
+            newQuote.Tags = newQuote.Tags.ConvertAll(t => t.ToLower());
+            this.quoteDalManager.AddNewQuote(newQuote);
 
             /*
                 * To insert date
@@ -58,7 +68,7 @@ namespace Moody.Service.BLL
                SqlCommand cmd= new SqlCommand("Insert into table (dateColumn) Values(@date2)",connection);
                cmd.Parameters.AddWithValue("@date2",date2.Date);
             */
-            newQuote.TimeCreated = DateTime.Today;
+
 
             return newQuote;
         }

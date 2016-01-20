@@ -33,11 +33,17 @@ namespace Moody.DAL
         private readonly string tableName = "Quotes";
 
         /// <summary>
+        /// The tag dal manager.
+        /// </summary>
+        private readonly TagDalManager tagDalManager;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="QuoteDalManager"/> class.
         /// </summary>
         public QuoteDalManager()
         {
             this.sqlDataManager = new SqlDataManager();
+            this.tagDalManager = new TagDalManager();
         }
 
         /// <summary>
@@ -119,25 +125,47 @@ namespace Moody.DAL
         {
             //TODO how to ckeck success or not add
 
+            int quoteId;
             SqlParameter[] sqlParameter = new SqlParameter[3];
 
             sqlParameter[0] = new SqlParameter("@Author", SqlDbType.VarChar) { Value = newQuote.Author };
             sqlParameter[1] = new SqlParameter("@Body", SqlDbType.Text) { Value = newQuote.Body };
-            sqlParameter[2] = new SqlParameter("@Time_created", SqlDbType.DateTime) { Value = newQuote.TimeCreated };
+            sqlParameter[2] = new SqlParameter("@Time_created", SqlDbType.DateTime) { Value = newQuote.TimeCreated.ToString("yyyy-MM-dd")};
 
             // TODO add tags
 
             try
             {
-                this.sqlDataManager.InsertProcedure("AddQuote", sqlParameter);
+                quoteId = this.sqlDataManager.InsertProcedureWithOutputInsertedId("AddQuote", sqlParameter);
+
             }
             catch (Exception exception)
             {
                 throw exception;
             }
+
+            foreach (var tag in newQuote.Tags)
+            {
+                var tagId = this.tagDalManager.GetTagIdByName(tag);
+               // Array.Clear(sqlParameter, 0, sqlParameter.Length);
+               SqlParameter [] sqlTagParameter = new SqlParameter[2];
+                sqlTagParameter[0] = new SqlParameter("@QuoteId", SqlDbType.Int) { Value = quoteId };
+                sqlTagParameter[1] = new SqlParameter("@TagId", SqlDbType.Int) { Value = tagId };
+                this.sqlDataManager.InsertProcedure("BindingQuoteWithTag", sqlTagParameter);
+            }
+
             return newQuote;
         }
 
+        /// <summary>
+        /// The get quotes by tag.
+        /// </summary>
+        /// <param name="tagName">
+        /// The tag name.
+        /// </param>
+        /// <returns>
+        /// The <see cref="List"/>.
+        /// </returns>
         public List<Quote> GetQuotesByTag(string tagName)
         {
             var quotes = new List<Quote>();

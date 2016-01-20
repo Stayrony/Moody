@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="QuoteDalManager.cs" />
+    <Compile Include="TagDalManager.cs" />
     <Compile Include="UserDalManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
