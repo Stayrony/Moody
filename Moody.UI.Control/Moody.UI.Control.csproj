@@ -49,6 +49,9 @@
     <Compile Include="DashboardControl.xaml.cs">
       <DependentUpon>DashboardControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EmptyItemControl.xaml.cs">
+      <DependentUpon>EmptyItemControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HeaderControl.xaml.cs">
       <DependentUpon>HeaderControl.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
     <Page Include="DashboardControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EmptyItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HeaderControl.xaml">
       <SubType>Designer</SubType>

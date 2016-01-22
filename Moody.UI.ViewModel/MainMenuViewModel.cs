@@ -247,7 +247,7 @@ namespace Moody.UI.ViewModel
         {
             try
             {
-                ControlManager.GetInstance().Place("DashboardControl", "mainRegion", "MusicControl");
+                ControlManager.GetInstance().Place("DashboardControl", "mainRegion", "EmptyItemControl");
             }
             catch (ExceptionBase exception)
             {

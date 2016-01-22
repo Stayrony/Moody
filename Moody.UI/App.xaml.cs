@@ -53,6 +53,9 @@ namespace Moody.UI
                 ControlManager.GetInstance().Add("QuotesControl", typeof(QuotesControl));
                 ControlManager.GetInstance().Add("VideosControl", typeof(VideosControl));
 
+                //Empty Item
+                ControlManager.GetInstance().Add("EmptyItemControl", typeof(EmptyItemControl));
+
                 this.mainWindow = ControlManager.GetInstance().GetControl("MainWindow") as MainWindow;
                 this.mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 this.mainWindow.Show();
