@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageDalManagerTester.cs" />
     <Compile Include="QuoteDalManagerTester.cs" />
     <Compile Include="SqlDataManagerTester.cs" />
     <Compile Include="UserDalManagerTester.cs" />
