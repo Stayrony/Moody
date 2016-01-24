@@ -70,7 +70,7 @@ namespace Moody.DAL
                     quoteId = int.Parse(dataRow["QuoteId"].ToString());
                     quote.Author = dataRow["Author"].ToString();
                     quote.Body = dataRow["Body"].ToString();
-                    DateTime.TryParse(dataRow["Time_created"].ToString(), out date);
+                    DateTime.TryParse(dataRow["TimeCreated"].ToString(), out date);
                     quote.TimeCreated = date;
                     quote.Tags = this.GetTagsByQuoteId(quoteId);
 
@@ -130,7 +130,7 @@ namespace Moody.DAL
 
             sqlParameter[0] = new SqlParameter("@Author", SqlDbType.VarChar) { Value = newQuote.Author };
             sqlParameter[1] = new SqlParameter("@Body", SqlDbType.Text) { Value = newQuote.Body };
-            sqlParameter[2] = new SqlParameter("@Time_created", SqlDbType.DateTime) { Value = newQuote.TimeCreated.ToString("yyyy-MM-dd")};
+            sqlParameter[2] = new SqlParameter("@TimeCreated", SqlDbType.DateTime) { Value = newQuote.TimeCreated.ToString("yyyy-MM-dd")};
 
             // TODO add tags
 
@@ -186,7 +186,7 @@ namespace Moody.DAL
                     quoteId = int.Parse(dataRow["QuoteId"].ToString());
                     quote.Author = dataRow["Author"].ToString();
                     quote.Body = dataRow["Body"].ToString();
-                    DateTime.TryParse(dataRow["Time_created"].ToString(), out date);
+                    DateTime.TryParse(dataRow["TimeCreated"].ToString(), out date);
                     quote.TimeCreated = date;
                     quote.Tags = this.GetTagsByQuoteId(quoteId);
 
@@ -201,6 +201,21 @@ namespace Moody.DAL
             }
 
             return quotes;
+        }
+
+        /// <summary>
+        /// The delete quote.
+        /// </summary>
+        /// <param name="deletingQuote">
+        /// The deleting quote.
+        /// </param>
+        /// <returns>
+        /// The <see cref="int"/>.
+        /// </returns>
+        public int DeleteQuote(Quote deletingQuote)
+        {
+            // TODO delete quote
+            return 0;
         }
     }
 

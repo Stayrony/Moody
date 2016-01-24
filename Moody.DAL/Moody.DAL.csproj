@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageDalManager.cs" />
     <Compile Include="QuoteDalManager.cs" />
     <Compile Include="TagDalManager.cs" />
     <Compile Include="UserDalManager.cs" />
