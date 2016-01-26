@@ -12,8 +12,8 @@
 
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel Margin="50 30 50 30" Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
+                        <WrapPanel  Orientation="Horizontal" HorizontalAlignment="Center"/>
+                       </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
 
                 <ListView.ItemTemplate>
