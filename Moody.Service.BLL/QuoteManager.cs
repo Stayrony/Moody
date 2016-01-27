@@ -54,22 +54,9 @@ namespace Moody.Service.BLL
                 newQuote.Author = "Anonymous";
             }
 
-            newQuote.TimeCreated = DateTime.Today;
+            newQuote.TimeCreated = DateTime.Now;
             newQuote.Tags = newQuote.Tags.ConvertAll(t => t.ToLower());
             this.quoteDalManager.AddNewQuote(newQuote);
-
-            /*
-                * To insert date
-
-               string date1="2013-12-12"; 
-               DateTime date2;
-               DateTime.TryParse(reader["datecolumn"], out date2);
-
-               SqlCommand cmd= new SqlCommand("Insert into table (dateColumn) Values(@date2)",connection);
-               cmd.Parameters.AddWithValue("@date2",date2.Date);
-            */
-
-
             return newQuote;
         }
 

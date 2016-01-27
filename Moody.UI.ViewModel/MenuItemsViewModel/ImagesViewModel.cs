@@ -80,12 +80,6 @@ namespace Moody.UI.ViewModel.MenuItemsViewModel
             }
         }
 
-        //
-        public string DisplayedImage
-        {
-            get { return @"C:\Users\mizju\Downloads\sister.jpg"; }
-        }
-
         #endregion Image Properties
 
         #region Fields

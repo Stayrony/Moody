@@ -7,6 +7,8 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Linq;
+
 namespace Moody.DAL
 {
     using System;
@@ -84,6 +86,7 @@ namespace Moody.DAL
                 return null;
             }
 
+            quotes = new List<Quote>(quotes.OrderByDescending(q => q.TimeCreated));
             return quotes;
         }
 
@@ -130,7 +133,7 @@ namespace Moody.DAL
 
             sqlParameter[0] = new SqlParameter("@Author", SqlDbType.VarChar) { Value = newQuote.Author };
             sqlParameter[1] = new SqlParameter("@Body", SqlDbType.Text) { Value = newQuote.Body };
-            sqlParameter[2] = new SqlParameter("@TimeCreated", SqlDbType.DateTime) { Value = newQuote.TimeCreated.ToString("yyyy-MM-dd")};
+            sqlParameter[2] = new SqlParameter("@TimeCreated", SqlDbType.DateTime) { Value = newQuote.TimeCreated };
 
             // TODO add tags
 
@@ -200,6 +203,7 @@ namespace Moody.DAL
                 return null;
             }
 
+            quotes = new List<Quote>(quotes.OrderByDescending(q => q.TimeCreated));
             return quotes;
         }
 

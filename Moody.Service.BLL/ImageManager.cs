@@ -47,7 +47,7 @@ namespace Moody.Service.BLL
         /// </returns>
         public Image CreateImage(Image newImage)
         {
-            newImage.TimeCreated = DateTime.Today;
+            newImage.TimeCreated = DateTime.Now;
             newImage.Tags = newImage.Tags.ConvertAll(t => t.ToLower());
             this.imageDalManager.AddNewImage(newImage);
             return new Image();

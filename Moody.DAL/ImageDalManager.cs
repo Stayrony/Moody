@@ -6,6 +6,10 @@
 //   The image dal manager.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
+using System.Globalization;
+using System.Linq;
+
 namespace Moody.DAL
 {
     using System;
@@ -78,6 +82,7 @@ namespace Moody.DAL
                 return null;
             }
 
+            images = new List<Image>(images.OrderByDescending(i => i.TimeCreated));
             return images;
         }
 
@@ -131,9 +136,7 @@ namespace Moody.DAL
             sqlParameter[0] = new SqlParameter("@ImagePath", SqlDbType.VarChar) { Value = newImage.ImagePath };
             sqlParameter[1] = new SqlParameter("@TimeCreated", SqlDbType.DateTime)
             {
-                Value =
-                                          newImage.TimeCreated.ToString
-                                          ("yyyy-MM-dd")
+                Value = newImage.TimeCreated
             };
 
             try
@@ -196,6 +199,7 @@ namespace Moody.DAL
                 return null;
             }
 
+            images = new List<Image>(images.OrderByDescending(i => i.TimeCreated));
             return images;
         }
 

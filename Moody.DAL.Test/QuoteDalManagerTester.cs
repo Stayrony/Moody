@@ -102,11 +102,32 @@ namespace Moody.DAL.Test
         [Test]
         public void AddNewQuoteBasicTest()
         {
+            //var newQuote = new Quote();
+            //newQuote.Author = "Winston Churchill";
+            //newQuote.Body = "Success is not final, failure is not fatal: it is the courage to continue that counts.";
+            //newQuote.Tags = new List<string> { "Courage", "Failure", "success" };
+            //newQuote.TimeCreated = DateTime.Now;
+            //this.quoteDalManager.AddNewQuote(newQuote);
+
+            //var newQuote = new Quote();
+            //newQuote.Author = "Robert Downey Jr.";
+            //newQuote.Body = "Listen, smile, agree, and then do whatever the fuck you were gonna do anyway.";
+            //newQuote.Tags = new List<string> { "dramatic", "sweet", "success" };
+            //newQuote.TimeCreated = DateTime.Now;
+            //this.quoteDalManager.AddNewQuote(newQuote);
+
+            //var newQuote = new Quote();
+            //newQuote.Author = "Winston Churchill";
+            //newQuote.Body = "Success is not final, failure is not fatal: it is the courage to continue that counts.";
+            //newQuote.Tags = new List<string> { "gleeful", "dreamy", "success" };
+            //newQuote.TimeCreated = DateTime.Now;
+            //this.quoteDalManager.AddNewQuote(newQuote);
+
             var newQuote = new Quote();
-            newQuote.Author = "Winston Churchill";
-            newQuote.Body = "Success is not final, failure is not fatal: it is the courage to continue that counts.";
-            newQuote.Tags = new List<string> { "Courage", "Failure", "Success" };
-            newQuote.TimeCreated = DateTime.Today;
+            newQuote.Author = "Huckleberry";
+            newQuote.Body = "I am your huckleberry friend";
+            newQuote.Tags = new List<string> { "gleeful", "happy", "romantic", "sweet" };
+            newQuote.TimeCreated = DateTime.Now;
             this.quoteDalManager.AddNewQuote(newQuote);
         }
     }
