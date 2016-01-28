@@ -169,7 +169,7 @@ namespace Moody.DAL.Utility
                 {
                     cmd.Connection = this.OpenConnection();
                     cmd.CommandText = query;
-                 //   cmd.Parameters.AddRange(sqlParameter);
+                    //   cmd.Parameters.AddRange(sqlParameter);
                     cmd.ExecuteNonQuery();
                     this.sqlDataAdapter.SelectCommand = cmd;
                     this.sqlDataAdapter.Fill(dataSet);
@@ -325,6 +325,46 @@ namespace Moody.DAL.Utility
 
 
         /// <summary>
+        /// The delete procedure.
+        /// </summary>
+        /// <param name="procedureName">
+        /// The procedure name.
+        /// </param>
+        /// <param name="sqlParameter">
+        /// The sql parameter.
+        /// </param>
+        /// <exception cref="Exception">
+        /// </exception>
+        public void DeleteProcedure(string procedureName, DbParameter[] sqlParameter)
+        {
+            using (var cmd = new SqlCommand(procedureName, this.conn))
+            {
+                try
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddRange(sqlParameter);
+                    cmd.Connection = this.OpenConnection();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected == 0)
+                    {
+                        throw new Exception("Procedure: " + procedureName + " not has been deleted Item from DB");
+                    }
+                }
+                catch (SqlException exception)
+                {
+                    throw new Exception(
+                        "Error - Connection.ExecuteStoredProcedureQuery - Procedure: " + procedureName + " \nException: "
+                        + exception.StackTrace);
+                }
+                finally
+                {
+                    this.conn.Close();
+                }
+
+            }
+        }
+
+        /// <summary>
         /// The execute stored procedure insert query.
         /// </summary>
         /// <param name="procedureName">
@@ -343,6 +383,9 @@ namespace Moody.DAL.Utility
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddRange(sqlParameter);
+                    cmd.Connection = this.OpenConnection();
+                    cmd.ExecuteNonQuery();
+
                 }
                 catch (SqlException exception)
                 {
@@ -371,10 +414,24 @@ namespace Moody.DAL.Utility
         {
             using (var cmd = new SqlCommand(procedureName, this.conn))
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddRange(sqlParameters);
-                cmd.Connection = this.OpenConnection();
-                cmd.ExecuteNonQuery();
+                try
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddRange(sqlParameters);
+                    cmd.Connection = this.OpenConnection();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException exception)
+                {
+                    throw new Exception(
+                        "Error - Connection.InsertProcedure - Procedure: " + procedureName + " \nException: "
+                        + exception.StackTrace);
+                }
+                finally
+                {
+                    this.conn.Close();
+                }
+
             }
         }
 
@@ -395,10 +452,23 @@ namespace Moody.DAL.Utility
             int id;
             using (var cmd = new SqlCommand(procedureName, this.conn))
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddRange(sqlParameters);
-                cmd.Connection = this.OpenConnection();
-                id = (int)cmd.ExecuteScalar();
+                try
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddRange(sqlParameters);
+                    cmd.Connection = this.OpenConnection();
+                    id = (int)cmd.ExecuteScalar();
+                }
+                catch (SqlException exception)
+                {
+                    throw new Exception(
+                        "Error - Connection.InsertProcedureWithOutputInsertedId - Procedure: " + procedureName + " \nException: "
+                        + exception.StackTrace);
+                }
+                finally
+                {
+                    this.conn.Close();
+                }
             }
 
             return id;
