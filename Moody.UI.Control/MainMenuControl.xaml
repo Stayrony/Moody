@@ -16,117 +16,69 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Background="{DynamicResource PrimaryHueDarkBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
+        <ListBox x:Name="MenuItemsListBox" SelectedIndex="0" Background="{DynamicResource PrimaryHueDarkBrush}">
 
-        <!--Homepage-->
-        <TextBlock
-          Grid.Row="0"
-          x:Name="Homepage"
-          VerticalAlignment="Center">
-          
-          <Hyperlink Command ="{Binding Path=HomepageLink}"
-                     TextDecorations="None">
-            
-            <TextBlock 
-                Text=" Homepage"
-                Style="{StaticResource LinkStyle}"/>
-               </Hyperlink>
-        </TextBlock>
+            <!--Homepage-->
+            <ListBoxItem>
+                <TextBlock x:Name="Homepage" VerticalAlignment="Center"> 
+                    <Hyperlink Command ="{Binding Path=HomepageLink}" TextDecorations="None">
+                        <TextBlock Text=" Homepage" Style="{StaticResource LinkStyle}" Margin="15 5 15 5"/>
+                    </Hyperlink>
+                </TextBlock>
+            </ListBoxItem>
 
-        <!--Profile-->
-        <TextBlock
-          Grid.Row="1"
-          x:Name="Profile"
-          VerticalAlignment="Center">
-          
-          <Hyperlink Command ="{Binding Path=ProfileLink}"
-                     TextDecorations="None">
-          <TextBlock 
-              Text=" Profile"
-              Style="{StaticResource LinkStyle}"/>
-           </Hyperlink>
-        </TextBlock>
+            <!--Profile-->
+            <ListBoxItem>
+                <TextBlock x:Name="Profile" VerticalAlignment="Center">
+                <Hyperlink Command ="{Binding Path=ProfileLink}" TextDecorations="None">
+                    <TextBlock Text=" Profile" Style="{StaticResource LinkStyle}" Margin="15 5 15 5"/>
+                </Hyperlink>
+                </TextBlock>
+            </ListBoxItem>
 
-        <!--Images-->
-        <TextBlock
-          Grid.Row="2"
-          x:Name="Images"
-            VerticalAlignment="Center"
-          Style="{StaticResource LinkStyle}">
-          <Hyperlink Command ="{Binding Path=ImagesLink}"
-              TextDecorations="None">
-          <TextBlock
-              Text=" Images"
-              Style="{StaticResource LinkStyle}"/>
-             </Hyperlink>
-        </TextBlock>
+            <!--Images-->
+            <ListBoxItem>
+                <TextBlock x:Name="Images" VerticalAlignment="Center">
+                <Hyperlink Command ="{Binding Path=ImagesLink}" TextDecorations="None">
+                    <TextBlock Text=" Images" Style="{StaticResource LinkStyle}" Margin="15 5 15 5"/>
+                </Hyperlink>
+            </TextBlock>
+            </ListBoxItem>
 
-        <!--Quotes-->
-        <TextBlock
-          Grid.Row="3"
-          x:Name="Quotes"
-           VerticalAlignment="Center">
-          
-          <Hyperlink Command ="{Binding Path=QuotesLink}"
-                     TextDecorations="None">
-          <TextBlock 
-           Text=" Quotes"
-              Style="{StaticResource LinkStyle}"/>
-               </Hyperlink>
-        </TextBlock>
+            <!--Quotes-->
+            <ListBoxItem>
+                <TextBlock x:Name="Quotes" VerticalAlignment="Center">
+                <Hyperlink Command ="{Binding Path=QuotesLink}" TextDecorations="None">
+                    <TextBlock Text=" Quotes" Style="{StaticResource LinkStyle}" Margin="15 5 15 5"/>
+                </Hyperlink>
+            </TextBlock>
+            </ListBoxItem>
 
-        <!--Videos-->
-        <TextBlock
-          Grid.Row="4"
-          x:Name="Videos"
-              VerticalAlignment="Center">
-          
-          <Hyperlink Command ="{Binding Path=VideosLink}"
-                     TextDecorations="None">
-          <TextBlock 
-              Text=" Videos"
-              Style="{StaticResource LinkStyle}"/>
-             </Hyperlink>
-        </TextBlock>
+            <!--Videos-->
+            <ListBoxItem>
+                <TextBlock x:Name="Videos" VerticalAlignment="Center">
+                <Hyperlink Command ="{Binding Path=VideosLink}" TextDecorations="None">
+                    <TextBlock Text=" Videos" Style="{StaticResource LinkStyle}" Margin="15 5 15 5"/>
+                </Hyperlink>
+            </TextBlock>
+            </ListBoxItem>
 
-        <!--Music-->
-        <TextBlock
-          Grid.Row="5"
-          x:Name="Music"
-              VerticalAlignment="Center"
-          >
-          
-          <Hyperlink Command ="{Binding Path=MusicLink}"
-                     TextDecorations="None">
-          <TextBlock 
-           Style="{StaticResource LinkStyle}"
-           Text=" Music"/>
-          </Hyperlink>
-        </TextBlock>
+            <!--Music-->
+            <ListBoxItem>
+                <TextBlock x:Name="Music" VerticalAlignment="Center">
+                <Hyperlink Command ="{Binding Path=MusicLink}" TextDecorations="None">
+                    <TextBlock Style="{StaticResource LinkStyle}" Text=" Music" Margin="15 5 15 5"/>
+                </Hyperlink>
+            </TextBlock>
+            </ListBoxItem>
 
-
-        <!--Statistics-->
-        <TextBlock
-          Grid.Row="6"
-          x:Name="Statistics"
-              VerticalAlignment="Center">
-          
-          <Hyperlink Command ="{Binding Path=StatisticsLink}"
-                   TextDecorations="None"
-                     >
-          <TextBlock 
-              Text=" Statistics"
-              Style="{StaticResource LinkStyle}"/>
-               </Hyperlink>
-        </TextBlock>
-    </Grid>
+            <!--Statistics-->
+            <ListBoxItem>
+                <TextBlock x:Name="Statistics" VerticalAlignment="Center"> 
+                <Hyperlink Command ="{Binding Path=StatisticsLink}" TextDecorations="None">
+                    <TextBlock Text=" Statistics" Style="{StaticResource LinkStyle}" Margin="15 5 15 5"/>
+                </Hyperlink>
+            </TextBlock>
+            </ListBoxItem>
+        </ListBox>
 </UserControl>
