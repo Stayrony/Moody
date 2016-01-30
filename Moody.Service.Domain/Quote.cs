@@ -37,5 +37,10 @@ namespace Moody.Service.Domain
         /// Gets or sets the tags.
         /// </summary>
         public List<string> Tags { get; set; }
+
+        /// <summary>
+        /// Gets or sets the quote id.
+        /// </summary>
+        public int QuoteId { get; set; }
     }
 }

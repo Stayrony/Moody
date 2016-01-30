@@ -30,5 +30,10 @@ namespace Moody.Service.Domain
         ///     Gets or sets the tags.
         /// </summary>
         public List<string> Tags { get; set; }
+
+        /// <summary>
+        /// Gets or sets the image id.
+        /// </summary>
+        public int ImageId { get; set; }
     }
 }
