@@ -17,8 +17,8 @@
 
     <Grid Background="{DynamicResource MaterialDesignPaper}">
         <ScrollViewer>
-            <ListView ItemsSource="{Binding ImagesList}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-
+            <ListView ItemsSource="{Binding ImagesList}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                            ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal"/>

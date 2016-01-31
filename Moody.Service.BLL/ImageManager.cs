@@ -70,12 +70,13 @@ namespace Moody.Service.BLL
         /// <summary>
         /// The delete image.
         /// </summary>
-        /// <param name="image">
-        /// The image.
+        /// <param name="deletingImage">
+        /// The deleting Image.
         /// </param>
-        public void DeleteImage(Image image)
+        public void DeleteImage(Image deletingImage)
         {
             // TODO delete image
+            this.imageDalManager.DeleteImage(deletingImage.ImageId);
         }
     }
 }

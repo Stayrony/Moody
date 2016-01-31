@@ -75,5 +75,16 @@ namespace Moody.Service.BLL
 
             return quotes;
         }
+
+        /// <summary>
+        /// The delete quote.
+        /// </summary>
+        /// <param name="deletingQuote">
+        /// The deleting quote.
+        /// </param>
+        public void DeleteQuote(Quote deletingQuote)
+        {
+            this.quoteDalManager.DeleteQuote(deletingQuote.QuoteId);
+        }
     }
 }

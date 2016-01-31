@@ -6,6 +6,10 @@
 //   The quotes view model.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
+using System.Diagnostics;
+using System.Windows.Input;
+
 namespace Moody.UI.ViewModel.MenuItemsViewModel
 {
     using System;
@@ -15,7 +19,7 @@ namespace Moody.UI.ViewModel.MenuItemsViewModel
     using Moody.Service.BLL;
     using Moody.Service.Domain;
     using Moody.UI.Contract;
-
+    using Utility;
     /// <summary>
     ///     The quotes view model.
     /// </summary>
@@ -70,6 +74,41 @@ namespace Moody.UI.ViewModel.MenuItemsViewModel
             return quoteCollection;
         }
 
+        #region Presentation Properties
+
+        /// <summary>
+        ///     Gets the detele quote command.
+        /// </summary>
+        public ICommand DeleteQuoteCommand
+        {
+            get
+            {
+                if (this._deteleQuoteCommand == null)
+                {
+                    this._deteleQuoteCommand = new RelayCommand(param => this.DeleteQuote());
+                }
+
+                return this._deteleQuoteCommand;
+            }
+        }
+
+        #endregion Presentation Properties
+
+        #region Public Method
+
+        /// <summary>
+        ///     The delete quote.
+        /// </summary>
+        public void DeleteQuote()
+        {
+            this.QuotesList.Remove(this.SelectedQuote);
+            Debug.WriteLine("Body - " + SelectedQuote.Body);
+            //TODO remove from DB
+            this.quoteManager.DeleteQuote(this.SelectedQuote);
+        }
+
+        #endregion Public Method
+
         #region Fields
 
         /// <summary>
@@ -110,13 +149,43 @@ namespace Moody.UI.ViewModel.MenuItemsViewModel
             new UIPropertyMetadata(null));
 
         /// <summary>
+        /// The selected quote property.
+        /// </summary>
+        public static readonly DependencyProperty SelectedQuoteProperty = DependencyProperty.Register(
+            "SelectedQuote",
+            typeof(Quote),
+            typeof(QuotesViewModel),
+            new UIPropertyMetadata(null));
+
+        /// <summary>
         /// The quote manager.
         /// </summary>
         private readonly QuoteManager quoteManager = new QuoteManager();
 
+        /// <summary>
+        ///     The _detele quote command.
+        /// </summary>
+        private RelayCommand _deteleQuoteCommand;
+
         #endregion Fields
 
-        #region User Properties
+        #region Quote Properties
+
+        /// <summary>
+        /// Gets or sets the selected quote.
+        /// </summary>
+        public Quote SelectedQuote
+        {
+            get
+            {
+                return (Quote)this.GetValue(SelectedQuoteProperty);
+            }
+
+            set
+            {
+                this.SetValue(SelectedQuoteProperty, value);
+            }
+        }
 
         /// <summary>
         ///     Gets or sets the body quote.
@@ -166,6 +235,6 @@ namespace Moody.UI.ViewModel.MenuItemsViewModel
             }
         }
 
-        #endregion User Properties
+        #endregion Quote Properties
     }
 }

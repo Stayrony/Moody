@@ -67,14 +67,13 @@ namespace Moody.DAL
                 {
                     Quote quote = new Quote();
                     DateTime date;
-                    int quoteId;
 
-                    quoteId = int.Parse(dataRow["QuoteId"].ToString());
+                    quote.QuoteId = int.Parse(dataRow["QuoteId"].ToString());
                     quote.Author = dataRow["Author"].ToString();
                     quote.Body = dataRow["Body"].ToString();
                     DateTime.TryParse(dataRow["TimeCreated"].ToString(), out date);
                     quote.TimeCreated = date;
-                    quote.Tags = this.GetTagsByQuoteId(quoteId);
+                    quote.Tags = this.GetTagsByQuoteId(quote.QuoteId);
 
                     // TODO add list tags
 
@@ -184,14 +183,13 @@ namespace Moody.DAL
                 {
                     Quote quote = new Quote();
                     DateTime date;
-                    int quoteId;
 
-                    quoteId = int.Parse(dataRow["QuoteId"].ToString());
+                    quote.QuoteId = int.Parse(dataRow["QuoteId"].ToString());
                     quote.Author = dataRow["Author"].ToString();
                     quote.Body = dataRow["Body"].ToString();
                     DateTime.TryParse(dataRow["TimeCreated"].ToString(), out date);
                     quote.TimeCreated = date;
-                    quote.Tags = this.GetTagsByQuoteId(quoteId);
+                    quote.Tags = this.GetTagsByQuoteId(quote.QuoteId);
 
                     // TODO add list tags
 
@@ -210,16 +208,19 @@ namespace Moody.DAL
         /// <summary>
         /// The delete quote.
         /// </summary>
-        /// <param name="deletingQuote">
-        /// The deleting quote.
+        /// <param name="quoteId">
+        /// The quote Id.
         /// </param>
         /// <returns>
         /// The <see cref="int"/>.
         /// </returns>
-        public int DeleteQuote(Quote deletingQuote)
+        public void DeleteQuote(int quoteId)
         {
-            // TODO delete quote
-            return 0;
+            // TODO delete quote from DataBase
+
+            var sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@QuoteId", SqlDbType.Int) { Value = quoteId };
+            this.sqlDataManager.DeleteProcedure("DeleteQuote", sqlParameters);
         }
     }
 

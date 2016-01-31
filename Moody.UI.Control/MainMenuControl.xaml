@@ -16,7 +16,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-        <ListBox x:Name="MenuItemsListBox" SelectedIndex="0" Background="{DynamicResource PrimaryHueDarkBrush}">
+        <ListBox x:Name="MenuItemsListBox" Background="{DynamicResource PrimaryHueDarkBrush}">
 
             <!--Homepage-->
             <ListBoxItem>

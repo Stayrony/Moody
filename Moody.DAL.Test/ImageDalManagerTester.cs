@@ -71,5 +71,16 @@ namespace Moody.DAL.Test
                 Console.WriteLine("\n");
             }
         }
+
+        /// <summary>
+        /// The delete image basic test.
+        /// </summary>
+        [Test]
+        public void DeleteImageBasicTest()
+        {
+            int imageId = 2;
+            this.imageDalManager.DeleteImage(imageId);
+        }
+
     }
 }

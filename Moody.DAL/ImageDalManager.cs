@@ -66,13 +66,12 @@ namespace Moody.DAL
                 {
                     var image = new Image();
                     DateTime date;
-                    int imageId;
 
-                    imageId = int.Parse(dataRow["ImageId"].ToString());
+                    image.ImageId = int.Parse(dataRow["ImageId"].ToString());
                     image.ImagePath = dataRow["ImagePath"].ToString();
                     DateTime.TryParse(dataRow["TimeCreated"].ToString(), out date);
                     image.TimeCreated = date;
-                    image.Tags = this.GetTagsByImageId(imageId);
+                    image.Tags = this.GetTagsByImageId(image.ImageId);
 
                     images.Add(image);
                 }
@@ -183,13 +182,12 @@ namespace Moody.DAL
                 {
                     var image = new Image();
                     DateTime date;
-                    int imageId;
 
-                    imageId = int.Parse(dataRow["ImageId"].ToString());
+                    image.ImageId = int.Parse(dataRow["ImageId"].ToString());
                     image.ImagePath = dataRow["ImagePath"].ToString();
                     DateTime.TryParse(dataRow["TimeCreated"].ToString(), out date);
                     image.TimeCreated = date;
-                    image.Tags = this.GetTagsByImageId(imageId);
+                    image.Tags = this.GetTagsByImageId(image.ImageId);
 
                     images.Add(image);
                 }
@@ -206,16 +204,15 @@ namespace Moody.DAL
         /// <summary>
         /// The delete image.
         /// </summary>
-        /// <param name="deletingImage">
-        /// The deleting image.
+        /// <param name="deletingImageId">
+        /// The deleting Image Id.
         /// </param>
-        /// <returns>
-        /// The <see cref="int"/>.
-        /// </returns>
-        public int DeleteImage(Image deletingImage)
+        public void DeleteImage(int deletingImageId)
         {
-            // TODO delete qoute
-            return 0;
+            // TODO delete image from DataBase
+            var sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@ImageId", SqlDbType.Int) { Value = deletingImageId };
+            this.sqlDataManager.DeleteProcedure("DeleteImage", sqlParameters);
         }
     }
 }

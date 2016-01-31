@@ -185,6 +185,7 @@ namespace Moody.UI.ViewModel
 
                 // ApplicationContext.GetInstance().AddValue("user", user);
                 ControlManager.GetInstance().Place("MainWindow", "mainRegion", "DashboardControl");
+                ControlManager.GetInstance().Place("DashboardControl", "mainRegion", "HomepageControl");
             }
             catch (ExceptionBase exception)
             {

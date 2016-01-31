@@ -130,5 +130,15 @@ namespace Moody.DAL.Test
             newQuote.TimeCreated = DateTime.Now;
             this.quoteDalManager.AddNewQuote(newQuote);
         }
+
+        /// <summary>
+        /// The delete quote basic test.
+        /// </summary>
+        [Test]
+        public void DeleteQuoteBasicTest()
+        {
+            int quoteId = 1003;
+            this.quoteDalManager.DeleteQuote(quoteId);
+        }
     }
 }
