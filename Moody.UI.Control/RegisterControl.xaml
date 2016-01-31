@@ -9,11 +9,23 @@
              d:DesignHeight="510" d:DesignWidth="320">
 
     <UserControl.Resources>
-      <!--  <ResourceDictionary Source="Styles/LoginUserControl.xaml"/> -->
+        <ResourceDictionary Source="Styles/EnterStyle.xaml"/>
     </UserControl.Resources>
 
-    <Grid Background="{DynamicResource MaterialDesignPaper}" 
-          HorizontalAlignment="Center">
+    <Grid Style="{StaticResource AnimatedGridBackgroundStyle}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Column = "1" Grid.Row="1" Background="{DynamicResource MaterialDesignPaper}" HorizontalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
             <!--TITLE NAME-->
@@ -134,4 +146,5 @@
       </TextBlock>
 
     </Grid>
+        </Grid>
 </UserControl>

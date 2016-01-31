@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:Moody.UI.Control.Converters">
+
+    <converters:ImageSizeConverter x:Key="ImageSizeConverter" />
+    <!-- pack://application:,,,Moody.UI.Control;component -->
+    <Style x:Key="AnimatedGridBackgroundStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Moody.UI;component/Resources/smile.PNG"
+                            Stretch="None"
+                            TileMode="Tile"
+                            AlignmentX="Left"
+                            AlignmentY="Top"
+                            ViewportUnits="Absolute"
+                            Viewport="{Binding ImageSource, RelativeSource={RelativeSource Self}, 
+                            Converter = {StaticResource ImageSizeConverter}}" />
+
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <RectAnimation Storyboard.TargetProperty="Background.Viewport"
+                                       To="-424,200,424,411" Duration="0:0:59"
+                                       RepeatBehavior="Forever" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
