@@ -6,6 +6,10 @@
 //   The tag dal manager.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
+using System.Collections.Generic;
+using Moody.Service.Domain;
+
 namespace Moody.DAL
 {
     using System.Data;
@@ -52,12 +56,12 @@ namespace Moody.DAL
             {
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                   tagId = int.Parse(dataRow["TagId"].ToString());
+                    tagId = int.Parse(dataRow["TagId"].ToString());
                 }
             }
             else
             {
-               tagId = this.AddNewTag(tagName);
+                tagId = this.AddNewTag(tagName);
             }
 
             return tagId;
@@ -78,6 +82,32 @@ namespace Moody.DAL
             sqlParameter[0] = new SqlParameter("@Name", SqlDbType.VarChar) { Value = tagName };
             var tagId = this.sqlDataManager.InsertProcedureWithOutputInsertedId("AddTag", sqlParameter);
             return tagId;
+        }
+
+        /// <summary>
+        /// The get all tags.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="List"/>.
+        /// </returns>
+        public List<Tag> GetAllTags()
+        {
+            List<Tag> tags = new List<Tag>();
+
+            var query = "SELECT * FROM [Moody].[dbo].[Tags]";
+            var dataTable = sqlDataManager.ExecuteSelectAllQuery(query);
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    Tag tag = new Tag();
+                    tag.TagId = int.Parse(dataRow["TagId"].ToString());
+                    tag.Name = dataRow["Name"].ToString();
+
+                    tags.Add(tag);
+                }
+            }
+            return tags;
         }
     }
 }
