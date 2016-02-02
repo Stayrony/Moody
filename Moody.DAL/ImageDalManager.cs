@@ -33,7 +33,7 @@ namespace Moody.DAL
         /// <summary>
         ///     The table name.
         /// </summary>
-        private readonly string tableName = "Images";
+        private readonly string tableName = "[Moody].[dbo].[Images]";
 
         /// <summary>
         ///     The tag dal manager.

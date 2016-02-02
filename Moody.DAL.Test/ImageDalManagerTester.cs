@@ -45,11 +45,12 @@ namespace Moody.DAL.Test
             Image image = new Image();
             // image.ImagePath = @"C:/Users/mizju/Downloads/sister.jpg"; blurred-summer-background_23-2147511429.jpg
             // http://40.media.tumblr.com/56ed1be0dd63635dc504f2da630f1114/tumblr_nmnotqlXt51s4eggto1_1280.jpg
-            // image.ImagePath = @"C:\Users\mizju\Google Drive\Moody\Ideas\hand-painted-summer-card_23-2147511337.jpg";
-            image.ImagePath = @"C:\Users\mizju\Google Drive\Moody\Ideas\4fb32b7e1c947196ad9bbe5789c869d2.jpg";
+             image.ImagePath = @"C:\Users\mizju\Google Drive\Moody\Ideas\hand-painted-summer-card_23-2147511337.jpg";
+            // image.ImagePath = @"C:\Users\mizju\Google Drive\Moody\Ideas\4fb32b7e1c947196ad9bbe5789c869d2.jpg";
+            // image.ImagePath = @"C:\Users\mizju\OneDrive\Pictures\JPN_33_Miyajima_40.jpg";
             image.TimeCreated = DateTime.Now;
             Console.WriteLine(image.TimeCreated.ToString("yyyy-MM-dd HH:mm:ss.fff"));
-            image.Tags = new List<string>() { "success", "happy" };
+            image.Tags = new List<string>() { "gleeful", "light" };
             imageDalManager.AddNewImage(image);
         }
 

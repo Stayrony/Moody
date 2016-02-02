@@ -32,7 +32,7 @@ namespace Moody.DAL
         /// <summary>
         /// The table name.
         /// </summary>
-        private readonly string tableName = "Quotes";
+        private readonly string tableName = "[Moody].[dbo].[Quotes]";
 
         /// <summary>
         /// The tag dal manager.
@@ -74,8 +74,6 @@ namespace Moody.DAL
                     DateTime.TryParse(dataRow["TimeCreated"].ToString(), out date);
                     quote.TimeCreated = date;
                     quote.Tags = this.GetTagsByQuoteId(quote.QuoteId);
-
-                    // TODO add list tags
 
                     quotes.Add(quote);
                 }

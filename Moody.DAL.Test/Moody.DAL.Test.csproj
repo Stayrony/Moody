@@ -46,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageDalManagerTester.cs" />
+    <Compile Include="ImageFillDBTester.cs" />
+    <Compile Include="StatisticDalManagerTester.cs" />
     <Compile Include="QuoteDalManagerTester.cs" />
+    <Compile Include="QuoteFillDBTester.cs" />
     <Compile Include="SqlDataManagerTester.cs" />
     <Compile Include="UserDalManagerTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +57,7 @@
   <ItemGroup>
     <None Include="..\Moody.UI\App.config">
       <Link>App.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

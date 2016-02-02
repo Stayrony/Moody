@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moody.UI.Control", "Moody.U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moody.UI.Bootstrapper", "Moody.UI.Bootstrapper\Moody.UI.Bootstrapper.csproj", "{1BA8F679-B763-4AB9-B763-80E5276CB570}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moody.Service.BLL.Test", "Moody.Service.BLL.Test\Moody.Service.BLL.Test.csproj", "{EEF8D977-9B4A-4483-B002-F42CC9DB3DA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		AppVeyor|Any CPU = AppVeyor|Any CPU
@@ -156,6 +158,12 @@ Global
 		{1BA8F679-B763-4AB9-B763-80E5276CB570}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BA8F679-B763-4AB9-B763-80E5276CB570}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BA8F679-B763-4AB9-B763-80E5276CB570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEF8D977-9B4A-4483-B002-F42CC9DB3DA4}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF8D977-9B4A-4483-B002-F42CC9DB3DA4}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{EEF8D977-9B4A-4483-B002-F42CC9DB3DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF8D977-9B4A-4483-B002-F42CC9DB3DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF8D977-9B4A-4483-B002-F42CC9DB3DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF8D977-9B4A-4483-B002-F42CC9DB3DA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

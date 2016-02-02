@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageManager.cs" />
+    <Compile Include="StatisticManager.cs" />
     <Compile Include="QuoteManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserManager.cs" />
