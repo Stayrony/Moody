@@ -2,10 +2,30 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:metroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-
-    </Grid>
+    <ScrollViewer>
+        <WrapPanel HorizontalAlignment="Center">
+            <materialDesign:Card Margin="4 4 4 4">
+                <metroChart:PieChart
+                Height="500"
+                Width="500"
+                Background="{DynamicResource MaterialDesignPaper}"
+                ChartTitle="Tag statistics"
+                ChartSubTitle="Total count of tag [image, quote, ect]"
+                SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}">
+                    <metroChart:PieChart.Series>
+                        <metroChart:ChartSeries
+                    SeriesTitle="Tag"
+                    DisplayMember="Name"
+                    ValueMember="Number"
+                    ItemsSource="{Binding Path=TagStatistic}"/>
+                    </metroChart:PieChart.Series>
+                </metroChart:PieChart>
+            </materialDesign:Card>
+            </WrapPanel>
+    </ScrollViewer>
 </UserControl>

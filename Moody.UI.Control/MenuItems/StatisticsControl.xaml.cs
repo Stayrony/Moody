@@ -12,17 +12,47 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Moody.UI.Contract;
+using Moody.UI.ViewModel.MenuItemsViewModel;
 
 namespace Moody.UI.Control.MenuItems
 {
     /// <summary>
     /// Interaction logic for StatisticsControl.xaml
     /// </summary>
-    public partial class StatisticsControl : UserControl
+    public partial class StatisticsControl : UserControl, IView
     {
+
+
+        public StatisticsViewModel StatisticsViewModel
+        {
+            get { return (StatisticsViewModel)GetValue(StatisticsViewModelProperty); }
+            set { SetValue(StatisticsViewModelProperty, value); }
+        }
+
+        public static readonly DependencyProperty StatisticsViewModelProperty = DependencyProperty.Register(
+               "StatisticsViewModel", 
+               typeof(StatisticsViewModel), 
+               typeof(StatisticsControl),
+               new UIPropertyMetadata(null));
+
+
         public StatisticsControl()
         {
             InitializeComponent();
+            this.SetFocus();
+            this.StatisticsViewModel = new StatisticsViewModel(this);
+            this.DataContext = StatisticsViewModel;
+        }
+
+        public void SetFocus()
+        {
+
+        }
+
+        public void ShowError(string error)
+        {
+            MessageBox.Show(error);
         }
     }
 }
